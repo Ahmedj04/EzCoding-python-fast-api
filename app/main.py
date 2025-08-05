@@ -5,6 +5,12 @@ app = FastAPI()
 
 app.include_router(run_code.router)
 
+
+@app.get("/")
+async def root():
+    return {"DocAcquire FastAPI Python API"}
+
+
 # Render expects host=0.0.0.0 and port=$PORT
 if __name__ == "__main__":
     import uvicorn
